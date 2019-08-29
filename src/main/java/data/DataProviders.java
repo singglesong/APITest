@@ -1,8 +1,12 @@
 package data;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import base.utils.IOUtils;
+import org.testng.annotations.DataProvider;
+import pojo.JsonData;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by liugumin on 2019/8/28.
@@ -11,7 +15,23 @@ import java.io.InputStreamReader;
  */
 public class DataProviders {
 
-//    public static Iterable<Object> createData(){
-//
-//    }
+    /**
+     * 读取文件内容作为测试数据
+     * @return
+     */
+    @DataProvider(name = "dataByJson")
+    public static Iterator<Object> createData(String file){
+        List<Object> jsonDatas = new LinkedList<Object>();
+        try {
+            jsonDatas = IOUtils.readFileToList(file, null, JsonData.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            return jsonDatas.iterator();
+        }
+    }
+
+    public static void main(String[] args) {
+        Iterator it = createData("testNg/1.txt");
+    }
 }
