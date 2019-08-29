@@ -4,6 +4,7 @@ import base.utils.IOUtils;
 import org.testng.annotations.DataProvider;
 import pojo.JsonData;
 
+import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,10 +21,11 @@ public class DataProviders {
      * @return
      */
     @DataProvider(name = "dataByJson")
-    public static Iterator<Object> createData(String file){
+    public static Iterator<Object> createData(Method method/*ITestContext context*/){
         List<Object> jsonDatas = new LinkedList<Object>();
+        //        String testParam = context.getCurrentXmlTest().getParameter("test_param");
         try {
-            jsonDatas = IOUtils.readFileToList(file, null, JsonData.class);
+            jsonDatas = IOUtils.readFileToList("/Users/liugumin/IdeaProjects/company/APITest/src/main/resources/testNg/1.txt", null, JsonData.class);
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -31,7 +33,4 @@ public class DataProviders {
         }
     }
 
-    public static void main(String[] args) {
-        Iterator it = createData("testNg/1.txt");
-    }
 }

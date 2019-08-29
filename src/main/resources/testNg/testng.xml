@@ -17,8 +17,8 @@
         <!--</run>-->
         <!--</groups>-->
 
-        <!--<classes>-->
-            <!--<class name="Interface.ApiITaobaoobao.TaobaoConCompareTest"/>-->
-        <!--</classes>-->
+        <classes>
+            <class name="asserts.TaobaoAsert"/>
+        </classes>
     </test>
 </suite>
