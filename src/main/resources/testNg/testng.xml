@@ -18,7 +18,7 @@
         <!--</groups>-->
 
         <classes>
-            <class name="asserts.TaobaoAsert"/>
+            <class name="asserts.StringAssert"/>
         </classes>
     </test>
 </suite>
