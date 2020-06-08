@@ -37,7 +37,7 @@ testng
 
 
 3.打开报告结果
-allure serve allure-results
+allure serve allure-results  或者  allure serve target/allure-results
 
 
 #### 约定俗成
