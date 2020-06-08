@@ -1,0 +1,13 @@
+common\utils\NetWorkUtils.class
+common\utils\IOUtils.class
+pojo\TestSuit.class
+pojo\JsonData.class
+pojo\TestCase.class
+data\DataProviders.class
+common\utils\ObjectUtils.class
+asserts\StringAssert.class
+base\mybatis\dao\ots_lima_test\TrainlineOrderInfoMapper.class
+base\mybatis\model\ots_lima_test\TrainlineOrderInfo.class
+asserts\DBAssert.class
+common\utils\DaoUtils.class
+data\TestCaseDataFactory.class

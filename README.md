@@ -33,12 +33,11 @@ brew install allure
 testng 
 1.pom 文件配置
 
-2.
-mvn clean test 运行测试用例
+2.mvn clean test 运行测试用例
 
 
 3.打开报告结果
-allure serve target/surefire-reports地址
+allure serve allure-results
 
 
 #### 约定俗成

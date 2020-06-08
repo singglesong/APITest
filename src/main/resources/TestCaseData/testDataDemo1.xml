@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testsuit id="Rest-Assrued" baseurl="http://nt-store.lxnantong.com">
+	<testcase id="rest-assured-Demo"  name="status测试">
+		<precondition url="/store/cms/complaint/queryCount?tenantId=611270067979550720" />
+		<testdata id="1"/>
+		<expect statusCode="200"/>
+	</testcase>
+	<testcase id="rest-assured-Demo2"  name="status测试">
+		<precondition url="/store/cms/complaint/queryCount?tenantId=611270067979550720" />
+		<testdata id="1"/>
+		<expect statusCode="200"/>
+	</testcase>
+	
+</testsuit>

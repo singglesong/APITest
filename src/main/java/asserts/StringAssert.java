@@ -1,18 +1,14 @@
 package asserts;
 
-import base.utils.NetWorkUtils;
 import data.DataProviders;
-import kong.unirest.HttpResponse;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pojo.JsonData;
 
-import java.util.Map;
 
 /**
  * Created by liugumin on 2019/8/28.
  */
-public class StringAsert {
+public class StringAssert {
 
     /**
      * 判断是否全部包含指定的字符串
@@ -29,10 +25,12 @@ public class StringAsert {
             result = result&&content.contains(param);
         }
         // 根据断言方向进行断言
-        if(direction)
+        if(direction) {
             Assert.assertTrue(result);
-        else
+        }
+        else {
             Assert.assertFalse(result);
+        }
     }
 
 
@@ -53,10 +51,12 @@ public class StringAsert {
             result = result&&content.contains(param);
         }
         // 根据断言方向进行断言
-        if(direction)
+        if(direction) {
             Assert.assertTrue(result);
-        else
+        }
+        else {
             Assert.assertFalse(result);
+        }
     }
 
 

@@ -18,7 +18,7 @@
         <!--</groups>-->
 
         <classes>
-            <class name="testCase.CaseDemo1Test"/>
+            <class name="testcase.Demo1TestCase"/>
         </classes>
     </test>
 </suite>

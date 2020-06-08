@@ -1,8 +1,9 @@
 package data;
 
-import base.utils.IOUtils;
+import common.utils.IOUtils;
 import org.testng.annotations.DataProvider;
 import pojo.JsonData;
+import pojo.TestCase;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;
@@ -31,6 +32,15 @@ public class DataProviders {
         }finally {
             return jsonDatas.iterator();
         }
+    }
+
+
+    @DataProvider(name = "dataFromXml")
+    public static Iterator<Object> dataFromXml(Method method/*ITestContext context*/){
+        String path = "TestCaseData/testDataDemo1.xml";
+        TestCaseDataFactory testCaseDataFactory = TestCaseDataFactory.getInstance(path);
+
+        return testCaseDataFactory.loadDataCase().iterator();
     }
 
 }

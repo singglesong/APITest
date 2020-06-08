@@ -41,22 +41,22 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="pojo.model.${schema.name}" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="base.mybatis.model.${schema.name}" targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
             <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="mybatis.mapper.${schema.name}" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="base.mybatis.mapper.${schema.name}" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="data.dao.${schema.name}" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="base.mybatis.dao.${schema.name}" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
-        <table tableName="t_alipay_app_auth_record_69" domainObjectName="tAlipayAppAuthRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="trainline_order_info" domainObjectName="TrainlineOrderInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <!--   <table tableName="t_stat_biz_sdk_sys_task" domainObjectName="TstatBizSdkSysTask" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
           <table tableName="T_Sdk_Statistics" domainObjectName="TSdkStatistics" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> -->
         <!--       <table tableName="t_idcard_list" domainObjectName="TIdcardList" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
