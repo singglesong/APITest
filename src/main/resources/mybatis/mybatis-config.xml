@@ -7,7 +7,7 @@
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc-url:jdbc:mysql://47.111.1.51:3306/ots_lima_test?characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai"/>
+                <property name="url" value="testJdbc-url:testJdbc:mysql://47.111.1.51:3306/ots_lima_test?characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai"/>
                 <property name="username" value="ots_lima" />
                 <property name="password" value="Ots_lima@123" />
             </dataSource>

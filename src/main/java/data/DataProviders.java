@@ -6,6 +6,7 @@ import pojo.JsonData;
 import pojo.TestCase;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,8 +22,11 @@ public class DataProviders {
      * 读取文件内容作为测试数据
      * @return
      */
-    @DataProvider(name = "dataByJson")
+    @DataProvider(name = "dataFromJson")
     public static Iterator<Object> createData(Method method/*ITestContext context*/){
+
+        Parameter[] parameters = method.getParameters();
+
         List<Object> jsonDatas = new LinkedList<Object>();
         //        String testParam = context.getCurrentXmlTest().getParameter("test_param");
         try {

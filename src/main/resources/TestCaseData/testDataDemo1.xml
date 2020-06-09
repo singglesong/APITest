@@ -9,7 +9,7 @@
 	<testcase id="rest-assured-Demo2"  name="status测试">
 		<precondition url="/store/cms/complaint/queryCount?tenantId=611270067979550720" />
 		<testdata id="1"/>
-		<expect statusCode="200"/>
+		<expect statusCode="201"/>
 	</testcase>
 	
 </testsuit>

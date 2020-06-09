@@ -22,7 +22,7 @@
         </commentGenerator>
 
         <!--数据库链接地址账号密码-->
-        <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+        <jdbcConnection driverClass="${testJdbc.driver}" connectionURL="${testJdbc.url}" userId="${testJdbc.username}" password="${testJdbc.password}">
         </jdbcConnection>
 
         <!-- java类型处理器

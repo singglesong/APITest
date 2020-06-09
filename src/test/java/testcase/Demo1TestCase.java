@@ -27,7 +27,7 @@ public class Demo1TestCase {
     public void preConditions() {
         String path = "TestCaseData/testDataDemo1.xml";
         testCaseDataFactory = TestCaseDataFactory.getInstance(path);
-        baseurl = testCaseDataFactory.loadTestSuit().baseurl;
+        baseurl = testCaseDataFactory.loadTestSuit().getBaseurl();
 //        testCase = testCaseDataFactory.loadDataByCaseId("rest-assured-Demo");
     }
 

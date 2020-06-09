@@ -55,7 +55,7 @@ public class TestCaseDataFactory {
 	            
 	            //获取根元素
 	            Element rootElement =  doc.getRootElement();
-			  	testSuit.baseurl = rootElement.attributeValue("baseurl");
+			  	testSuit.setBaseurl(rootElement.attributeValue("baseurl"));
 	            		
 	            return testSuit;  
 	        } catch(Exception e) {  
