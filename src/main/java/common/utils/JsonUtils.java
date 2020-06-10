@@ -32,36 +32,6 @@ public class JsonUtils {
     }
 
 
-
-    /**   将本地文本中的内容读取到string字符串
-     * @param filePahtName   文件路径 如 ：C://新建文本文档(4).txt
-     * @return   文件中的字符串
-     * @throws IOException
-     */
-    public static String readJsonData(String filePahtName) {
-        StringBuffer strbuffer = new StringBuffer();
-        File myFile = new File(filePahtName);
-        if (!myFile.exists()) {
-            logger.error("不能找到文件" + filePahtName + "，请检查文件地址");
-            return null;
-        }
-        try {
-            FileInputStream fis = new FileInputStream(myFile);
-            InputStreamReader inputStreamReader = new InputStreamReader(fis, "UTF-8");//乱码的话可以换成 GBK    //将字节流转化为字符输入流
-            BufferedReader in = new BufferedReader(inputStreamReader);  // 创建一个使用默认大小输入缓冲区的缓冲字符输入流。
-            String str;
-            while ((str = in.readLine() )!= null) {
-                strbuffer.append(str);
-            }
-            in.close();
-            inputStreamReader.close();
-            fis.close();
-        } catch (IOException e) {
-            e.getStackTrace();
-        }
-        return strbuffer.toString();
-    }
-
     /**
      * Json 字符串转为对象
      * @param JSONStr

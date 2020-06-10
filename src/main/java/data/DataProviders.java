@@ -7,9 +7,7 @@ import pojo.TestCase;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by liugumin on 2019/8/28.
@@ -45,6 +43,16 @@ public class DataProviders {
         TestCaseDataFactory testCaseDataFactory = TestCaseDataFactory.getInstance(path);
 
         return testCaseDataFactory.loadDataCase().iterator();
+    }
+
+    @DataProvider(name = "dataFromArray")
+    public static Iterator<Object> dataFromArray(Method method/*ITestContext context*/){
+       List<Object> mock = new LinkedList<>();
+       mock.add("nihao");
+       mock.add("asdfa");
+
+       return mock.iterator();
+
     }
 
 }

@@ -2,9 +2,12 @@ package common.utils;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
@@ -13,6 +16,8 @@ import java.util.List;
  */
 public class IOUtils {
 
+    private static final Logger logger = LoggerFactory.getLogger(IOUtils.class);
+
     /**
      * 读取文件内容作为字符串对象
      * @param file  文件地址
@@ -20,23 +25,29 @@ public class IOUtils {
      * @return
      * @throws Exception
      */
-    public static String readFiletoString(String file, String encode) throws Exception {
+    public static String readFiletoString(String file, String encode)  {
         File file1 = new File(file);
+        StringBuffer sBuffer = null;
 
-        if(!file1.exists()){
-            throw  new Exception("文件不存在");
-        }
+        try {
+            if (!file1.exists()) {
+                logger.error("{}文件不存在",file);
+                return null;
+            }
 
-        FileInputStream fileInput = new FileInputStream(file);
-        InputStreamReader reader = (encode==null || "".equals(encode))?new InputStreamReader(fileInput,"utf-8") :new InputStreamReader( fileInput, encode);
-        StringBuffer sBuffer = new StringBuffer();
-        int charCount = 0;
-        char[] charBuffer = new char[1024];
-        while((charCount = reader.read(charBuffer)) > 0) {
-            sBuffer.append(charBuffer, 0, charCount);
+            FileInputStream fileInput = new FileInputStream(file);
+            InputStreamReader reader = (encode == null || "".equals(encode)) ? new InputStreamReader(fileInput, "utf-8") : new InputStreamReader(fileInput, encode);
+            sBuffer = new StringBuffer();
+            int charCount = 0;
+            char[] charBuffer = new char[1024];
+            while ((charCount = reader.read(charBuffer)) > 0) {
+                sBuffer.append(charBuffer, 0, charCount);
+            }
+            reader.close();
+            fileInput.close();
+        }catch (IOException e){
+
         }
-        reader.close();
-        fileInput.close();
         return sBuffer.toString();
     }
 
