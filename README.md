@@ -66,15 +66,11 @@
 - 4.2.1 allure generate target/allure-results  先生成报告到目录
 - 4.2.2  allure open allure-results  然后再执行打开命令
 
-#### jenkins配置
-##### 插件管理下载aullre插件
-![avatar](https://upload-images.jianshu.io/upload_images/6725899-5e3e3b903d8daec4.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+#### 使用说明
+1.TestCase包中新建测试类，执行指定的测试用例
+2.测试过程中使用的数据库等信息通过json文件传入，文件放在资源文件夹(resources)的TestCaseData目录下
+3.项目中默认读resource/testNg/testng.xml 文件(pom文件suiteXmlFile字段修改)，执行文件中配置的测试类。
+4.mvn clean test 运行resource/testNg/testng.xml 中配置的测试类
+5.allure serve target/allure-results  查看结果报告
 
-##### 全局工具配置中安装Allure Commandline
-
-##### job中配置Allure report 路径
-
-#### 约定俗成
-assertParams 中 "包含字符串" 使用关键字  contain
-assertParams 中
 

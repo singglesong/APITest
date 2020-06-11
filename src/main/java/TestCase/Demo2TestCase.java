@@ -1,4 +1,4 @@
-package testcase;
+package TestCase;
 
 import common.utils.IOUtils;
 import common.utils.JdbcUtils;
@@ -8,17 +8,14 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-import io.restassured.RestAssured;
 import io.restassured.http.Cookie;
 
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 
-import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static reactor.core.Scannable.from;
+
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -42,7 +39,7 @@ public class Demo2TestCase {
 
     @BeforeTest
     public void preConditions() {
-        String path ="E:/IdeaProjects/APITest/src/main/resources/TestCaseData/testDataDemo2.json";
+        String path = "mybatis2/testDataDemo2.json";
         String jsondata = IOUtils.readFiletoString(path,"utf-8");
         suit = JsonUtils.parseJsonData(jsondata,TestSuit.class);
         caseList = suit.getCaseList();
@@ -56,8 +53,6 @@ public class Demo2TestCase {
         baseURI = suit.getBaseurl();
         Response response =
                 given()
-                        .log()
-                        .all()
                          .contentType("application/json; charset=UTF-8")
                          .body("{\"username\":\""+testCase.getRequest().getUsername()+"\",\"password\":\""+testCase.getRequest().getPassword()+"\"}")
                          .request(Method.POST,"/login/v2")
@@ -140,5 +135,10 @@ public class Demo2TestCase {
     public void testCase4(Object object){
         Assert.assertNotNull(object);
     }
+
+
+
+
+
 
 }

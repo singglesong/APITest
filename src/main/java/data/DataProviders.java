@@ -37,14 +37,6 @@ public class DataProviders {
     }
 
 
-    @DataProvider(name = "dataFromXml")
-    public static Iterator<Object> dataFromXml(Method method/*ITestContext context*/){
-        String path = "TestCaseData/testDataDemo1.xml";
-        TestCaseDataFactory testCaseDataFactory = TestCaseDataFactory.getInstance(path);
-
-        return testCaseDataFactory.loadDataCase().iterator();
-    }
-
     @DataProvider(name = "dataFromArray")
     public static Iterator<Object> dataFromArray(Method method/*ITestContext context*/){
        List<Object> mock = new LinkedList<>();

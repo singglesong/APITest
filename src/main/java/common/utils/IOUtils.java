@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -26,6 +27,8 @@ public class IOUtils {
      * @throws Exception
      */
     public static String readFiletoString(String file, String encode)  {
+        URL classpath = IOUtils.class.getResource("/");
+        file = classpath.getPath()+file;
         File file1 = new File(file);
         StringBuffer sBuffer = null;
 
@@ -79,4 +82,15 @@ public class IOUtils {
 
         return pojoList;
     }
+
+    public static void main(String[] args) {
+        int status = 0;
+        if (status == 0) {
+            logger.info("status:{}", status);
+        } else {
+            logger.info("status:{}", status);
+        }
+        logger.info("end!");
+    }
+
 }
