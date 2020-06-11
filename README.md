@@ -67,10 +67,10 @@
 - 4.2.2  allure open allure-results  然后再执行打开命令
 
 #### 使用说明
-1.TestCase包中新建测试类，执行指定的测试用例
-2.测试过程中使用的数据库等信息通过json文件传入，文件放在资源文件夹(resources)的TestCaseData目录下
-3.项目中默认读resource/testNg/testng.xml 文件(pom文件suiteXmlFile字段修改)，执行文件中配置的测试类。
-4.mvn clean test 运行resource/testNg/testng.xml 中配置的测试类
-5.allure serve target/allure-results  查看结果报告
+- 1.TestCase包中新建测试类，执行指定的测试用例
+- 2.测试过程中使用的数据库等信息通过json文件传入，文件放在资源文件夹(resources)的TestCaseData目录下
+- 3.项目中默认读resource/testNg/testng.xml 文件(pom文件suiteXmlFile字段修改)，执行文件中配置的测试类。
+- 4.mvn clean test 运行resource/testNg/testng.xml 中配置的测试类
+- 5.allure serve target/allure-results  查看结果报告
 
 
