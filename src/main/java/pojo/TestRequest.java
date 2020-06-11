@@ -19,4 +19,11 @@ public class TestRequest {
 
     @JsonProperty("headers")
     private Map<String,String> headers;// 请求头
+
+    @JsonProperty("username")
+    private String username;
+
+    @JsonProperty("password")
+    private String password;
+
 }

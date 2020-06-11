@@ -52,16 +52,17 @@ public class Demo2TestCase {
     @Story("关联接口测试")
     @Test(description = "先登录，然后通过登录接口信息进行下面的测试")
     public void testCase(){
+        TestCase testCase = suit.getCaseList().get(0);
         baseURI = suit.getBaseurl();
         Response response =
                 given()
                         .log()
                         .all()
                          .contentType("application/json; charset=UTF-8")
-                         .body("{\"username\":\"liangshuihe\",\"password\":\"123456\"}")
+                         .body("{\"username\":\""+testCase.getRequest().getUsername()+"\",\"password\":\""+testCase.getRequest().getPassword()+"\"}")
                          .request(Method.POST,"/login/v2")
                          .then()
-                .body("data.user_name",equalTo("liangshuihe"))
+                          .body("data.user_name",equalTo(testCase.getRequest().getUsername()))
                         .extract().
                         response();
         String token = response.path("data.token");// response body 如下
